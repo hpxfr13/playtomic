@@ -16,4 +16,10 @@ public class StripeRestTemplateResponseErrorHandler extends DefaultResponseError
 
         super.handleError(response, statusCode);
     }
+
+    @Override
+    protected boolean hasError(HttpStatus statusCode) {
+        return statusCode.isError();
+    }
+
 }
